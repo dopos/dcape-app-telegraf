@@ -4,6 +4,5 @@
 services:
   # This service will extend code from dcape
   app:
-    environment:
-      # Some var to keep YML struct
-      - DEBUG=yes
+    volumes:
+    - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
