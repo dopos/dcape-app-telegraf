@@ -4,5 +4,9 @@
 services:
   # This service will extend code from dcape
   app:
+    environment:
+      - HOST_PROC=/host/proc
+
     volumes:
-    - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /proc:/host/proc:ro
